@@ -5,7 +5,6 @@ use clap::{App, Arg};
 
 use chrono::prelude::*;
 use scraper::{Html, Selector};
-use time::Duration;
 
 use serde::{Deserialize, Serialize};
 
@@ -50,7 +49,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
 
     for day_offset in 0..days {
-        let date = start_date + Duration::days(day_offset);
+        let date = start_date + chrono::Duration::days(day_offset);
         let url = format!(
             "https://www.filmhousecinema.com/whats-on/{}",
             date.format("%Y-%m-%d").to_string()

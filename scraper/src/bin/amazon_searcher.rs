@@ -1,7 +1,7 @@
 extern crate clap;
 extern crate time;
 
-use url::{ParseError, Url};
+use url::Url;
 
 use clap::{App, Arg};
 
